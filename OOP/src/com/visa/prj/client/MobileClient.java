@@ -1,7 +1,7 @@
 package com.visa.prj.client;
 
 import com.visa.prj.dao.MobileDao;
-import com.visa.prj.dao.MobileDaoDbImpl;
+//import com.visa.prj.dao.MobileDaoDbImpl;
 import com.visa.prj.dao.MobileDaoFactory;
 import com.visa.prj.entity.Mobile;
 
