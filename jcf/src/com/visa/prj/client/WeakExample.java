@@ -3,7 +3,6 @@ package com.visa.prj.client;
 
 import java.util.Map;
 import java.util.WeakHashMap;
-import java.util.HashMap;
 
 public class WeakExample {
 
