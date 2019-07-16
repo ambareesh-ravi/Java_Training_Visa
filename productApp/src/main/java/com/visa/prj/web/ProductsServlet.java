@@ -28,6 +28,16 @@ public class ProductsServlet extends HttpServlet {
 	 */
 	//When clients makes a request, two objects are created (Request n Response).     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		ProductDao productDao = new ProductDaoJdbcImpl(); //USE FACTORY TO GET DAO INSTANCE
+		try {
+			List<Product> prds = productDao.getProducts();
+			request.setAttribute("products", prds);
+			request.getRequestDispatcher("products.jsp").forward(request, response);
+		} catch(FetchException ex)  {
+			ex.printStackTrace();
+		}
+		/*
 		PrintWriter out = response.getWriter(); //Opens a character stream to Client-Browser
 		//ServletOutputStream out = response.getOutputStream() //Opens byte stream to client (For video,image) 
 		response.setContentType("text/html"); //MIME type
@@ -51,7 +61,7 @@ public class ProductsServlet extends HttpServlet {
 			out.println(ex.getMessage());
 		}
 		out.print("</table></body></html>");
-		
+		*/
 		
 	}
 
