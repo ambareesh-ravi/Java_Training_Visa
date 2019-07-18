@@ -1,6 +1,18 @@
 package com.visa.prj.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="products")
 public class Product {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY) // To make the id as auto generate
+
 	private int id;
 	private String name;
 	private String category;
