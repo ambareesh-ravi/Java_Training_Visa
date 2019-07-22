@@ -5,6 +5,7 @@ import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -40,7 +41,9 @@ public class Booking implements Serializable {
 	@JoinColumn(name="hotel_id")
 	private Hotel hotel;
 
+	@Column(name="check_in_date")
 	private Date checkinDate;
+	@Column(name="check_out_date")
 
 	private Date checkoutDate;
 
