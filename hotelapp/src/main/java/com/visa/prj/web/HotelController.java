@@ -5,7 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.visa.prj.entity.Hotel;
 import com.visa.prj.entity.SearchCriteria;
 import com.visa.prj.service.BookingService;
 
@@ -26,4 +28,12 @@ public class HotelController {
 		m.addAttribute("hotelList", service.searchHotel(criteria));
 		return "searchResults.jsp";
 	}
+	
+	@RequestMapping("viewHotel.do")
+	public String viewHotelDetails(@RequestParam("id") long id,Model m) {
+		Hotel h = service.getHotelById(id);
+		m.addAttribute("hotel", h); //In showHotel.jsp , the commandName is hotel.
+		return "showHotel.jsp";
+	}
+	
 }
