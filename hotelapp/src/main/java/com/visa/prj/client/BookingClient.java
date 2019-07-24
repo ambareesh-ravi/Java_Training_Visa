@@ -31,12 +31,12 @@ public class BookingClient {
 //				System.out.println(h);
 //			}
 			
-//			Booking b = new Booking();
-//			User u = service.getUser(u1.getEmail(), u2.getPassword());
-//			Hotel h = service.getHotelById(1);
-//			b.setHotel(h);
-//			b.setUser(u);
-//			System.out.println("Booking Done with booking id" + service.bookHotelById(b));
+			Booking b = new Booking();
+			User u = service.getUser(u1.getEmail(), u2.getPassword());
+			Hotel h = service.getHotelById(1);
+			b.setHotel(h);
+			b.setUser(u);
+			System.out.println("Booking Done with booking id" + service.bookHotelById(b));
 			
 			SearchCriteria s = new SearchCriteria();
 			s.setSearchString("Place");

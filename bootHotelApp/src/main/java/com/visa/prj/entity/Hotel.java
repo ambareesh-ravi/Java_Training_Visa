@@ -14,7 +14,7 @@ import javax.persistence.Table;
  * A hotel where users may book stays.
  */
 @Entity
-@Table(name="hotel")
+@Table(name="Hotel")
 public class Hotel implements Serializable {
 
     /**
